@@ -1,0 +1,33 @@
+.glassmorphism {
+	background-color: transparent;
+	backdrop-filter: blur(50px);
+	-webkit-backdrop-filter: blur(50px);
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+	.glassmorphism {
+		background-color: transparent;
+		-webkit-backdrop-filter: blur(2em);
+		backdrop-filter: blur(2em);
+	}
+}
+
+.list {
+	display: flex;
+	flex-direction: row;
+	gap: 3rem;
+	color: #fff;
+	font-size: x-large;
+	font-weight: 400;
+
+	li {
+		list-style-type: none;
+		text-transform: uppercase;
+		display: flex;
+		gap: 0.5rem;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Room Witch
+* source:	https://sketchfab.com/3d-models/room-witch-5283fffe3f8b4f24964938e2aa82eb20
+* author:	Gioia2 (https://sketchfab.com/Gioia2)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Room Witch" (https://sketchfab.com/3d-models/room-witch-5283fffe3f8b4f24964938e2aa82eb20) by Gioia2 (https://sketchfab.com/Gioia2) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	little room low poly
+* source:	https://sketchfab.com/3d-models/little-room-low-poly-ad934dd7dc3044e7a13189605bca6094
+* author:	BaccaVacca (https://sketchfab.com/BaccaVacca)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "little room low poly" (https://sketchfab.com/3d-models/little-room-low-poly-ad934dd7dc3044e7a13189605bca6094) by BaccaVacca (https://sketchfab.com/BaccaVacca) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
