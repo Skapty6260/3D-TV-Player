@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { reducer } from './slices/SceneBreakpoint'
+import { sceneBreakpointReducer } from './slices/SceneBreakpoint'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+import { selectedVideoReducer } from './slices/CurrentVideo'
 
 export const store = configureStore({
 	reducer: {
-		SceneBreakpoint: reducer,
+		SceneBreakpoint: sceneBreakpointReducer,
+		CurrentVideo: selectedVideoReducer,
 	},
 })
 

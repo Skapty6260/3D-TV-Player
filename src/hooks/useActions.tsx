@@ -1,11 +1,13 @@
 'use client'
-import { actions } from '@/redux/slices/SceneBreakpoint'
+import { selectedVideoActions } from '@/redux/slices/CurrentVideo'
+import { sceneBreakpointActions } from '@/redux/slices/SceneBreakpoint'
 import { useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 import { Dispatch, UnknownAction, bindActionCreators } from 'redux'
 
 const rootActions = {
-	...actions,
+	...sceneBreakpointActions,
+	...selectedVideoActions,
 }
 
 export const useActions = () => {

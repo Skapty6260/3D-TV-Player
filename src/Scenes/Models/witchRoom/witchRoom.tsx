@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { useGLTF } from '@react-three/drei'
 import { Material } from 'three'
 
@@ -11,7 +11,7 @@ export function WitchRoom(props: any) {
 	)
 	return (
 		<group {...props} dispose={null}>
-			<group scale={0.1}>
+			<group scale={0.45}>
 				<mesh
 					castShadow
 					receiveShadow

@@ -14,4 +14,9 @@ const sceneBPSlice = createSlice({
 
 const { reducer, actions } = sceneBPSlice
 const { setSceneBreakpoint } = sceneBPSlice.actions
-export { reducer, actions, sceneBPSlice, setSceneBreakpoint }
+export {
+	reducer as sceneBreakpointReducer,
+	actions as sceneBreakpointActions,
+	sceneBPSlice,
+	setSceneBreakpoint,
+}

@@ -1,7 +1,42 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { Material } from 'three'
+import { Bloom, EffectComposer } from '@react-three/postprocessing'
+import { DoubleSide } from 'three'
+
+const Screen = (props: any, { enabled }: { enabled: boolean }) => {
+	if (!enabled && enabled === false) {
+		return <mesh {...props} />
+	}
+
+	const [video] = useState(() => {
+		const vid = document.createElement('video')
+		vid.src = '/assets/textures/tv_enabled.mp4'
+		vid.crossOrigin = 'Anonymous'
+		vid.loop = true
+		vid.volume = 0.1
+		vid.muted = false
+		vid.play()
+		return vid
+	})
+
+	return (
+		<mesh
+			castShadow
+			receiveShadow
+			geometry={props.geometry}
+			position={[0, 3.626, 2.249]}
+			rotation={[Math.PI / 2, 0, 0]}
+			scale={[5.667, 1, 4.011]}
+		>
+			<meshStandardMaterial emissive={'white'} side={DoubleSide}>
+				<videoTexture attach='map' args={[video]} />
+				<videoTexture attach='emissiveMap' args={[video]} />
+			</meshStandardMaterial>
+		</mesh>
+	)
+}
 
 export default function VintageTV(props: any) {
 	const {
@@ -42,7 +77,10 @@ export default function VintageTV(props: any) {
 						material={materials.Border_Screen}
 					/>
 				</group>
-				<mesh
+
+				{/* Screen */}
+				<Screen
+					enabled={props.isEnabled}
 					castShadow
 					receiveShadow
 					geometry={nodes.Screen_Screen1_0.geometry}
@@ -51,6 +89,7 @@ export default function VintageTV(props: any) {
 					rotation={[Math.PI / 2, 0, 0]}
 					scale={[5.667, 1, 4.011]}
 				/>
+
 				<mesh
 					castShadow
 					receiveShadow

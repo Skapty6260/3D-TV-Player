@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import '@/tailwind.css'
-import { Suspense } from 'react'
-import Loading from './loading'
 
 const font = Poppins({
 	subsets: ['latin'],
@@ -21,9 +19,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={font.className}>
-				<Suspense fallback={<Loading />}>{children}</Suspense>
-			</body>
+			<body className={font.className}>{children}</body>
 		</html>
 	)
 }

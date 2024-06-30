@@ -16,6 +16,18 @@ export const startCameraPositions = {
 }
 export const finalCameraPositions = { endX: -10.18, endY: 3.95, endZ: 0.4 }
 
+// toPlayer Camera animations
+export const startPlayerCameraPositions = {
+	startX: -10.18,
+	startY: 5.95,
+	startZ: 0.4,
+}
+export const finalPlayerCameraPositions = {
+	endX: -15.42,
+	endY: -18.87,
+	endZ: 5.18,
+}
+
 //  ███▄ ▄███▓ ▒█████  ▓█████▄ ▓█████  ██▓      ██████
 // ▓██▒▀█▀ ██▒▒██▒  ██▒▒██▀ ██▌▓█   ▀ ▓██▒    ▒██    ▒
 // ▓██    ▓██░▒██░  ██▒░██   █▌▒███   ▒██░    ░ ▓██▄

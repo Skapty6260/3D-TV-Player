@@ -1,10 +1,14 @@
 import { Environment, MeshReflectorMaterial } from '@react-three/drei'
 
-const LandingEnvironment = () => {
+const LandingEnvironment = ({ floorPosition }: { floorPosition: number }) => {
 	return (
 		<>
 			{/* Floor */}
-			<mesh position-y={-0.48} receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
+			<mesh
+				position-y={floorPosition}
+				receiveShadow
+				rotation={[-Math.PI / 2, 0, 0]}
+			>
 				<planeGeometry args={[200, 200]} />
 				<MeshReflectorMaterial
 					blur={[100, 100]}
