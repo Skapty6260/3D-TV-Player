@@ -61,7 +61,7 @@ export const FallingTV = (props: IRenderProps) => {
 
 	useFrame((_, delta) => {
 		if (groupRef.current.position.y < -19.35) return
-		else groupRef.current.position.y -= 8 * delta
+		else groupRef.current.position.y -= 15 * delta
 	})
 
 	return (

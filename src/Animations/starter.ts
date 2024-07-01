@@ -10,8 +10,12 @@ interface IProps {
 }
 
 // Declaration Constants
-const { startX, startY, startZ } = startCameraPositions
-const { endX, endY, endZ } = finalCameraPositions
+const startX = startCameraPositions.x
+const startY = startCameraPositions.y
+const startZ = startCameraPositions.z
+const endX = finalCameraPositions.x
+const endY = finalCameraPositions.y
+const endZ = finalCameraPositions.z
 
 export const AnimationStarter = async ({
 	target,

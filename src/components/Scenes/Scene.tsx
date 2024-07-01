@@ -1,18 +1,16 @@
 'use client'
 import React, { Dispatch, memo, useEffect, useRef } from 'react'
 
-import AnimatedCamera from './SceneComponents/Landing/LandingCamera'
-import { StartTextAnimated } from './SceneComponents/Landing/AnimatedText'
+import { StartTextAnimated } from '../ui/AnimatedText'
 import { useD3Hover } from '@/hooks/use3DHover'
-import LandingEnvironment from './SceneComponents/Landing/Environment'
-import { ForestLocation } from './Models/Forest/Forest'
+import LandingEnvironment from './Environment'
 import { useActions } from '@/hooks/useActions'
-import { FallingTV, TVEntity, TVRender } from './Models/TVEntity'
+import { TVRender } from '../../Models/TVEntity'
 import { InteractionWrapper } from './interactionWrapper'
-import PlayerLocation from './SceneComponents/Player/Location'
-import PlayerCamera from './SceneComponents/Player/PlayerCamera'
+import { PlayerCamera, LandingCamera } from './CameraRigs'
+import MixedLocation from './Locations/MixedLocation'
 
-const LandingScene = memo(
+const Scene = memo(
 	(props: { tvClicked: boolean; setTvClicked: Dispatch<boolean> }) => {
 		const { hovered, hover } = useD3Hover()
 		const { tvClicked, setTvClicked } = props
@@ -26,7 +24,7 @@ const LandingScene = memo(
 		useEffect(() => {
 			if (tvClicked === true) {
 				hover(false)
-				setTimeout(() => setSceneBreakpoint(true), 10000)
+				// setTimeout(() => setSceneBreakpoint(true), 5000)
 			}
 		}, [tvClicked])
 
@@ -43,7 +41,7 @@ const LandingScene = memo(
 						tvRef={tvRef}
 					/>
 				) : (
-					<AnimatedCamera ref={cameraRef} tvRef={tvRef} />
+					<LandingCamera ref={cameraRef} tvRef={tvRef} />
 				)}
 				<StartTextAnimated tvClicked={tvClicked} />
 
@@ -57,15 +55,11 @@ const LandingScene = memo(
 				</InteractionWrapper>
 
 				{/* Location and Scene Environment */}
-				{tvClicked !== true ? (
-					<ForestLocation />
-				) : (
-					<PlayerLocation locationRef={locationRef} />
-				)}
+				<MixedLocation tvClicked={tvClicked} locationRef={locationRef} />
 				<LandingEnvironment floorPosition={tvClicked === true ? -27 : -0.48} />
 			</>
 		)
 	}
 )
 
-export default LandingScene
+export default Scene

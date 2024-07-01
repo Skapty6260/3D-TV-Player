@@ -3,10 +3,9 @@ import { store } from '@/redux/store'
 import { Leva } from 'leva'
 import { Provider } from 'react-redux'
 import { Canvas } from '@react-three/fiber'
-import { useAppSelector } from '@/redux/store'
 import { Suspense, useState } from 'react'
 import Loading from './loading'
-import LandingScene from '@/Scenes/LandingScene'
+import Scene from '@/components/Scenes/Scene'
 import { PlayerSection } from '@/components/Layout/PlayerSection/PlayerSection'
 
 export default function Home() {
@@ -25,7 +24,7 @@ export default function Home() {
 					{/* 3D */}
 					<Suspense fallback={tvClicked === false ? <Loading /> : null}>
 						<Canvas>
-							<LandingScene tvClicked={tvClicked} setTvClicked={setTvClicked} />
+							<Scene tvClicked={tvClicked} setTvClicked={setTvClicked} />
 						</Canvas>
 					</Suspense>
 				</figure>

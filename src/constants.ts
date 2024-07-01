@@ -9,24 +9,12 @@ import { Vector3 } from 'three'
 
 // constants.ts
 // Landing Camera animations
-export const startCameraPositions = {
-	startX: -36.04,
-	startY: 15.48,
-	startZ: -14.09,
-}
-export const finalCameraPositions = { endX: -10.18, endY: 3.95, endZ: 0.4 }
+export const startCameraPositions = new Vector3(-36.04, 15.48, -14.09)
+export const finalCameraPositions = new Vector3(-10.18, 3.95, 0.4)
 
-// toPlayer Camera animations
-export const startPlayerCameraPositions = {
-	startX: -10.18,
-	startY: 5.95,
-	startZ: 0.4,
-}
-export const finalPlayerCameraPositions = {
-	endX: -15.42,
-	endY: -18.87,
-	endZ: 5.18,
-}
+// Player Camera animations
+export const startPlayerCameraPositions = new Vector3(-10.18, 5.95, -5.4)
+export const finalPlayerCameraPositions = new Vector3(-15.42, -18.87, 5.18)
 
 //  ███▄ ▄███▓ ▒█████  ▓█████▄ ▓█████  ██▓      ██████
 // ▓██▒▀█▀ ██▒▒██▒  ██▒▒██▀ ██▌▓█   ▀ ▓██▒    ▒██    ▒

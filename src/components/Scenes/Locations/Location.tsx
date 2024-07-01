@@ -1,4 +1,4 @@
-import { LittleRoom } from '@/Scenes/Models/littleRoom/littleRoom'
+import { LittleRoom } from '@/Models/littleRoom/littleRoom'
 import React from 'react'
 
 const PlayerLocation = ({ locationRef }: any) => {
