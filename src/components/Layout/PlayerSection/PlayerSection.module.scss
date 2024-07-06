@@ -1,0 +1,108 @@
+//  ToDo: Add adaptive fullscreen mode from burger in tv player
+.sectionWrapper {
+	@apply h-[100vh] w-1/3 absolute right-0 top-0 text-white;
+
+	border-left: 1px solid #a0a0a0;
+
+	transform: translateX(100vw);
+}
+
+.innerWrapper {
+	@apply flex h-full w-full flex-col relative select-none;
+
+	backdrop-filter: blur(40px);
+	-webkit-backdrop-filter: blur(40px);
+	background: linear-gradient(
+		0deg,
+		rgb(17, 20, 27) 0%,
+		rgba(22, 0, 42, 0.5) 100%
+	);
+	box-shadow: 0 7px 20px 5px #00000088;
+	overflow: hidden;
+	transition: 0.5s all;
+
+	animation: wrapperAppear 3s ease-in-out;
+	::before {
+		position: fixed;
+		content: '';
+		animation: beforeAnimation 10s ease-in-out;
+	}
+}
+
+.navWrapper {
+	@apply flex justify-between px-8 w-full opacity-0 items-center min-h-20 h-[80px];
+	background-color: #000000ac;
+	box-shadow: 0 4px 10px 1px black;
+	transform: translateY(-500px);
+
+	ul {
+		@apply flex items-center space-x-4;
+
+		li {
+			@apply cursor-pointer;
+
+			button {
+				@apply text-2xl p-1.5 rounded-xl;
+			}
+
+			button:disabled {
+				color: #ffffff61;
+				@apply text-3xl;
+			}
+		}
+	}
+
+	input {
+		color: rgb(64, 64, 64);
+		box-shadow: 0px 0px 10px 1px #fff;
+	}
+}
+
+@keyframes wrapperAppear {
+	0% {
+	}
+
+	100% {
+		border: 1px solid #ffffff44;
+		box-shadow: 0 7px 50px 10px #000000aa;
+		filter: brightness(1.3);
+	}
+}
+
+@keyframes beforeAnimation {
+	// 0% {
+	// 	box-shadow: 0 0 100px 40px #ffffff08;
+	// 	top: 100%;
+	// 	left: -100%;
+	// 	transform: rotate(-45deg);
+	// 	height: 200vh;
+	// 	transition: 0.7s all;
+	// 	filter: brightness(0.5);
+	// }
+
+	// 100% {
+	// 	filter: brightness(1.3);
+	// 	top: -100%;
+	// 	left: 100%;
+	// }
+}
+
+.videoComponent {
+	@apply w-[200px] h-[200px] opacity-0 relative shadow-lg shadow-black my-4 rounded-xl cursor-pointer;
+
+	video {
+		height: 100px;
+		width: 200px;
+		object-fit: cover;
+	}
+
+	backdrop-filter: blur(80px);
+	-webkit-backdrop-filter: blur(80px);
+	border-left: 1px solid #a0a0a0;
+	transition: all 100ms ease-in-out;
+
+	&:hover {
+		transform: scale(1.02);
+		border: 1px solid #fff;
+	}
+}
